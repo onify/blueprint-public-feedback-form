@@ -1,0 +1,37 @@
+{
+    "id": "blueprint-public-feedback-form",
+    "name": "Onify Blueprint: Public feedback form",
+    "tag": [
+        "form",
+        "feedback",
+        "public",
+        "css"
+    ],
+    "files": [
+        {
+            "type": "resource",
+            "name": "feedback.pug",
+            "source": "https://raw.githubusercontent.com/onify/blueprint-public-feedback-form/main/resources/forms/feedback.pug",
+            "destination": "/forms/feedback.pug"
+        },
+        {
+            "type": "resource",
+            "name": "feedback-result.pug",
+            "source": "https://raw.githubusercontent.com/onify/blueprint-public-feedback-form/main/resources/forms/feedback-result.pug",
+            "destination": "/forms/feedback-result.pug"
+        },
+        {
+            "type": "resource",
+            "name": "feedback.css",
+            "source": "https://raw.githubusercontent.com/onify/blueprint-public-feedback-form/main/resources/public/css/forms/feedback.css",
+            "destination": "/public/css/forms/feedback.css"
+        },
+        {
+            "type": "onifyApiRequest",
+            "name": "feedback",
+            "source": "https://raw.githubusercontent.com/onify/blueprint-public-feedback-form/main/feedback_form.json",
+            "url" : "/admin/forms",
+            "method" : "POST"
+        }
+    ]
+}
