@@ -1,0 +1,41 @@
+extends ../views/form/default-confirmation-form
+
+block append formConfig
+    -var ticketid = (form.queryparam.ticketid) ? form.queryparam.ticketid : "#00001"
+    +formOptions({
+        formDescription: "Thanks for leaving feedack for ticket " + ticketid + "."
+    })
+
+    style.
+        @import url("/css/forms/feedback.css");
+    br
+    
+block formContent
+
+    if (submit.recurringFeedback === "Yes")
+      
+      h3 Has this particular issue has been a recurring problem for you?
+
+      b #{submit.recurringFeedback}, #{submit.recurringFeedbackReason} 
+
+      hr
+
+    h3 How satisfied are you with the solution to your issue?
+
+    b #{submit.solutionFeedback} 
+
+    hr
+
+    h3 How satisfied are you with our service during the issue lifecycle?
+
+    b #{submit.satisfactionFeedback} 
+
+    hr
+
+    if (submit.satisfactionFeedbackReason)
+      
+      h3 Other comments
+
+      b #{submit.satisfactionFeedbackReason} 
+
+      hr

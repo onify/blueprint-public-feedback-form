@@ -1,0 +1,118 @@
+extends ../views/form/default-form
+
+block append formConfig
+    -var ticketid = (form.queryparam.ticketid) ? form.queryparam.ticketid : "00001"
+    +formOptions({
+        submitButtonName: "Send feedback",
+        formDescription: "Please leave feedback regarding ticket " + ticketid,
+        hideBackButton: true
+    })
+
+    style.
+        @import url("/css/forms/feedback.css");
+    br
+    
+block formContent
+
+    h3 Has this particular issue been a recurring problem for you?
+
+    +formElement({
+    type: 'radio',
+    name: 'recurringFeedback',
+    required: true,
+    class: 'radio-toolbar',
+    options: [
+        {
+            value: 'Yes',
+            label: 'Yes'
+        },
+        {
+            value: 'No',
+            label: 'No'
+        }
+        ]
+    })
+
+    +formElement({
+        type: "textarea",
+        name: "recurringFeedbackReason",
+        label: "Please describe the recurring problem",
+        visible: {
+            ifField: "recurringFeedback",
+            hasValue: "Yes"
+    }
+    })
+
+    hr
+
+    h3 How satisfied are you with the solution?
+
+    +formElement({
+    type: 'radio',
+    name: 'solutionFeedback',
+    required: true,
+    class: 'radio-toolbar',
+    options: [
+        {
+            label: '★ 1',
+            value: '1'
+        },
+        {
+            label: '★ 2',
+            value: '2'
+        },
+        {
+            label: '★ 3',
+            value: '3'
+        },
+        {
+            label: '★ 4',
+            value: '4'
+        },
+        {
+            label: '★ 5',
+            value: '5'
+        }
+        ]
+    })
+
+    hr
+
+    h3 How satisfied are you with our services?
+
+    +formElement({
+    type: 'radio',
+    name: 'satisfactionFeedback',
+    required: true,
+    class: 'radio-toolbar',
+    options: [
+        {
+            label: '♥ 1',
+            value: '1',
+        },
+        {
+            label: '♥ 2',
+            value: '2'
+        },
+        {
+            label: '♥ 3',
+            value: '3'
+        },
+        {
+            label: '♥ 4',
+            value: '4'
+        },
+        {
+            label: '♥ 5',
+            value: '5'
+        }
+        ]
+    })
+    
+    +formElement({
+        type: "textarea",
+        name: "satisfactionFeedbackReason",
+        label: "Other comments"
+    })
+
+    hr

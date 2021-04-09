@@ -1,0 +1,15 @@
+{
+  "slug": "feedback",
+  "title": "Incident feedback form",
+  "name": "Incident feedback form",
+  "template": {
+    "form": "/forms/feedback.pug",
+    "result": "/forms/feedback-result.pug"
+  },
+  "public": true,
+  "tag": [
+    "blueprint",
+    "public-feedback-form"
+  ],
+  "disableprepopulate": true
+}
