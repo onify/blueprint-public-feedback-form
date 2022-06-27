@@ -6,7 +6,7 @@
 
 Here is a quick example how to create a simple public form with custom css. All you need to do is connect the form to a task/process that adds the data somewhere :-)
 
-![alt text](/form.png "Form")
+![Onify Blueprint: Public feedback form](blueprint.jpg "Blueprint")
 
 ## Requirements
 
